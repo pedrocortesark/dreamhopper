@@ -1,0 +1,9 @@
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\DreamHopper.ViewModels.dll
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\DreamHopper.ViewModels.pdb
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\DreamHopper.MVVM.dll
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\DreamHopper.MVVM.pdb
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\obj\Debug\DreamHopper.ViewModels.csproj.AssemblyReference.cache
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\obj\Debug\DreamHopper.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\obj\Debug\DreamHopper.ViewModels.csproj.CopyComplete
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\obj\Debug\DreamHopper.ViewModels.dll
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\obj\Debug\DreamHopper.ViewModels.pdb

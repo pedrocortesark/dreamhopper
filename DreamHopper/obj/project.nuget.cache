@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "hV90M6c8gtQjNiBVWooZIgsc3DH3qF2zpgpQgW6R0tyvnxqolnW57Pe7UaZC24T4BQ6ECirPMWedlRIazGurvA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\rhinocommon\\7.13.21348.13001\\rhinocommon.7.13.21348.13001.nupkg.sha512",
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\rhinowindows\\7.13.21348.13001\\rhinowindows.7.13.21348.13001.nupkg.sha512"
+  ],
+  "logs": []
+}

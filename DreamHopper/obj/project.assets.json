@@ -1,0 +1,196 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.8": {
+      "RhinoCommon/7.13.21348.13001": {
+        "type": "package",
+        "compile": {
+          "lib/net48/Eto.dll": {},
+          "lib/net48/Rhino.UI.dll": {},
+          "lib/net48/RhinoCommon.dll": {}
+        },
+        "runtime": {
+          "lib/net48/_._": {}
+        },
+        "build": {
+          "build/RhinoCommon.targets": {}
+        }
+      },
+      "RhinoWindows/7.13.21348.13001": {
+        "type": "package",
+        "dependencies": {
+          "RhinoCommon": "[7.13.21348.13001]"
+        },
+        "compile": {
+          "lib/net48/Eto.Wpf.dll": {},
+          "lib/net48/RhinoWindows.dll": {}
+        },
+        "runtime": {
+          "lib/net48/Eto.Wpf.dll": {},
+          "lib/net48/RhinoWindows.dll": {}
+        },
+        "build": {
+          "build/RhinoWindows.targets": {}
+        }
+      },
+      "DreamHopper.MVVM/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DreamHopper.MVVM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DreamHopper.MVVM.dll": {}
+        }
+      },
+      "DreamHopper.UI/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DreamHopper.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DreamHopper.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DreamHopper.UI.dll": {}
+        }
+      },
+      "DreamHopper.ViewModels/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DreamHopper.MVVM": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DreamHopper.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DreamHopper.ViewModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RhinoCommon/7.13.21348.13001": {
+      "sha512": "JQdaNw61ddBqIe08E9O4N/grwrN1hjDHcYW7tWylwCZyFR7SepoCD4NS+6LN6+oSQhNbhLi9Bf+hQOFYFdRAEA==",
+      "type": "package",
+      "path": "rhinocommon/7.13.21348.13001",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Eto-LICENSE.txt",
+        "build/RhinoCommon.targets",
+        "lib/net48/Eto.dll",
+        "lib/net48/Eto.xml",
+        "lib/net48/Rhino.UI.dll",
+        "lib/net48/RhinoCommon.XML",
+        "lib/net48/RhinoCommon.dll",
+        "rhinocommon.7.13.21348.13001.nupkg.sha512",
+        "rhinocommon.nuspec",
+        "rhinocommon.png"
+      ]
+    },
+    "RhinoWindows/7.13.21348.13001": {
+      "sha512": "V94T8emmJmFfmbd5cu+uTNS0neZApx1Q5MXvsQGFtt/mEGEbdHE+dFOETNgbOOJXSdNboAnCR3uo0GosOFX+/g==",
+      "type": "package",
+      "path": "rhinowindows/7.13.21348.13001",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Eto-LICENSE.txt",
+        "build/RhinoWindows.targets",
+        "lib/net48/Eto.Wpf.dll",
+        "lib/net48/RhinoWindows.dll",
+        "rhinowindows.7.13.21348.13001.nupkg.sha512",
+        "rhinowindows.nuspec"
+      ]
+    },
+    "DreamHopper.MVVM/1.0.0": {
+      "type": "project",
+      "path": "../DreamHopper.MVVM/DreamHopper.MVVM.csproj",
+      "msbuildProject": "../DreamHopper.MVVM/DreamHopper.MVVM.csproj"
+    },
+    "DreamHopper.UI/1.0.0": {
+      "type": "project",
+      "path": "../DreamHopper.UI/DreamHopper.UI.csproj",
+      "msbuildProject": "../DreamHopper.UI/DreamHopper.UI.csproj"
+    },
+    "DreamHopper.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../DreamHopper.ViewModels/DreamHopper.ViewModels.csproj",
+      "msbuildProject": "../DreamHopper.ViewModels/DreamHopper.ViewModels.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.8": [
+      "DreamHopper.UI >= 1.0.0",
+      "RhinoCommon >= 7.13.21348.13001",
+      "RhinoWindows >= 7.13.21348.13001"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
+      "projectName": "DreamHopper",
+      "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
+      "packagesPath": "C:\\Users\\pedro.cortes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\pedro.cortes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net48"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "projectReferences": {
+            "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj": {
+              "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net48": {
+        "targetAlias": "net48",
+        "dependencies": {
+          "RhinoCommon": {
+            "include": "Compile, Build",
+            "target": "Package",
+            "version": "[7.13.21348.13001, )"
+          },
+          "RhinoWindows": {
+            "target": "Package",
+            "version": "[7.13.21348.13001, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
