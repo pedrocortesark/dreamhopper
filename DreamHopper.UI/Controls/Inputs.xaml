@@ -16,109 +16,24 @@
     <Grid Margin="10">
         
         <StackPanel>
-            
-            <!--Image load-->
-            <Border 
-                Height="128" 
-                Width="128" 
-                BorderBrush="{StaticResource PrimaryHueDarkBrush}"
-                BorderThickness="1">
-                <!--<Grid>
-                    <Image Source="{Binding ReferenceImage, Converter={local:BitmapToImageSourceConverter}}"/>
-                    <Label 
-                        Content="No input image" 
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center"
-                        Foreground="{StaticResource PrimaryHueDarkBrush}"
-                        Visibility="{Binding HasReferenceImage, Converter={local:InverseBooleanToVisiblityConverter}}"/>
-                </Grid>-->
-            </Border>
-            
-            <Grid>
-                
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                
-                <!--Capture button-->
-                <Button 
-                    Margin="0,10" 
-                    Padding="0"
-                    Grid.Column="0"
-                    Command="{Binding CaptureImageCommand}" 
-                    Foreground="{StaticResource PrimaryHueLightBrush}"
-                    Background="{StaticResource PrimaryHueDarkBrush}"
-                    BorderBrush="{StaticResource PrimaryHueDarkBrush}">
-                    <StackPanel Orientation="Horizontal" Margin="10,0">
-                        <materialDesign:PackIcon 
-                                Height="20" 
-                                Width="20" 
-                                Kind="Camera" 
-                                Foreground="{StaticResource PrimaryHueLightForegroundBrush}"
-                                VerticalAlignment="Center"
-                                Margin="0,0,10,0"/>
-                        <Label Content="Capture" FontSize="12" VerticalAlignment="Center" Foreground="{StaticResource PrimaryHueLightForegroundBrush}"/>
-                    </StackPanel>
-                </Button>
-                <!--Open button-->
-                <Button 
-                    Margin="0,10" 
-                    Padding="0"
-                    Grid.Column="2"
-                    Command="{Binding OpenImageCommand}" 
-                    Foreground="{StaticResource PrimaryHueLightBrush}"
-                    Background="{StaticResource PrimaryHueDarkBrush}"
-                    BorderBrush="{StaticResource PrimaryHueDarkBrush}">
-                    <StackPanel Orientation="Horizontal" Margin="10,0">
-                        <materialDesign:PackIcon 
-                                Height="20" 
-                                Width="20" 
-                                Kind="File" 
-                                Foreground="{StaticResource PrimaryHueLightForegroundBrush}"
-                                VerticalAlignment="Center"
-                                Margin="0,0,10,0"/>
-                        <Label Content="Open" FontSize="12" VerticalAlignment="Center" Foreground="{StaticResource PrimaryHueLightForegroundBrush}"/>
-                    </StackPanel>
-                </Button>
-                
-            </Grid>
 
-            <!--Settings-->
-            <Expander>
-                <Expander.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon 
-                            Height="25" 
-                            Width="25" 
-                            Kind="Gear" 
-                            Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
-                            VerticalAlignment="Center"
-                            Margin="0,0,10,0"/>
-                        <Label Content="Settings" FontSize="16" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Expander.Header>
+            <ItemsControl ItemsSource="{Binding Inputs}" Background="Transparent">
+                <ItemsControl.Resources>
+                    <DataTemplate DataType="{x:Type vm:NumberSliderInputViewModel}">
+                        <local:SliderInput/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:TextInputViewModel}">
+                        <local:TextInput/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:IntegerInputViewModel}">
+                        <local:IntegerTextInput/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:DropdownViewModel}">
+                        <local:DropdownInput/>
+                    </DataTemplate>
+                </ItemsControl.Resources>
+            </ItemsControl>
 
-                <ItemsControl ItemsSource="{Binding Inputs}">
-                    <ItemsControl.Resources>
-                        <DataTemplate DataType="{x:Type vm:NumberSliderInputViewModel}">
-                            <local:SliderInput/>
-                        </DataTemplate>
-                        <DataTemplate DataType="{x:Type vm:TextInputViewModel}">
-                            <local:TextInput/>
-                        </DataTemplate>
-                        <DataTemplate DataType="{x:Type vm:IntegerInputViewModel}">
-                            <local:IntegerTextInput/>
-                        </DataTemplate>
-                        <DataTemplate DataType="{x:Type vm:DropdownViewModel}">
-                            <local:DropdownInput/>
-                        </DataTemplate>
-                    </ItemsControl.Resources>
-                </ItemsControl>
-
-            </Expander>
-            
             <!--Run button-->
             <Button 
                 Margin="0,10" 

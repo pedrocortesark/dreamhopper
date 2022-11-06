@@ -11,52 +11,12 @@
     <Control.Resources>
         <ResourceDictionary Source="pack://application:,,,/DreamHopper.UI;component/ResourceDictionary.xaml"/>
     </Control.Resources>
-    
+
     <Grid Margin="10">
-
-        <ScrollViewer VerticalScrollBarVisibility="Hidden">
-            
-            <StackPanel>
-                <Expander Padding="5">
-                    
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                                Height="25" 
-                                Width="25" 
-                                Kind="Input" 
-                                Foreground="#3e474f"
-                                VerticalAlignment="Center"
-                                Margin="0,0,10,0"/>
-                            <Label Content="Inputs" FontSize="16" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Expander.Header>
-                    <local:Inputs/>
-                    
-                </Expander>
-
-                <Expander Padding="5" IsExpanded="{Binding OutputsExpanded}">
-                    <Expander.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon 
-                            Height="25" 
-                            Width="25" 
-                            Kind="Output" 
-                            Foreground="#3e474f"
-                            VerticalAlignment="Center"
-                            Margin="0,0,10,0"/>
-                            <Label Content="Outputs" FontSize="16" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Expander.Header>
-
-                </Expander>
-            </StackPanel>
-            
-        </ScrollViewer>
-
-
-        <materialDesign:Snackbar MessageQueue="{Binding MessageQueue}" Background="Transparent" Height="auto"/>
-        
+        <StackPanel>
+            <local:Inputs/>
+            <materialDesign:Snackbar MessageQueue="{Binding MessageQueue}" Background="Transparent" Height="auto"/>
+        </StackPanel>
     </Grid>
         
 </UserControl>

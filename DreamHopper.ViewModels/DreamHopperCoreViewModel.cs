@@ -1,5 +1,9 @@
-﻿using DreamHopper.MVVM;
+﻿using DreamHopper.IO;
+using DreamHopper.MVVM;
+using DreamHopper.ViewModels.Helpers;
 using DreamHopper.ViewModels.ViewModels;
+using DreamHopper.WebClient;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,6 +12,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Windows.Forms;
 using System.Windows.Input;
 
@@ -25,9 +30,9 @@ namespace DreamHopper.ViewModels
         public ICommand RunInferenceCommand { get; set; }
         public ICommand SaveImagesCommand { get; set; }
 
-        //private InferenceClient _client;
-        //private SubmissionReceipt _receipt;
-        //public SnackbarMessageQueue MessageQueue { get; set; }
+        private InferenceClient _client;
+        private SubmissionReceipt _receipt;
+        public SnackbarMessageQueue MessageQueue { get; set; }
         public Bitmap ReferenceImage { get; set; }
         public bool HasReferenceImage { get { return ReferenceImage != null; } set { } }
 
@@ -44,45 +49,18 @@ namespace DreamHopper.ViewModels
             //this.OpenImageCommand = new RelayCommand(this.OpenImage);
             this.RunInferenceCommand = new RelayCommand(async () => await this.RunInference());
             this.SaveImagesCommand = new RelayCommand(this.SaveImages);
-            //this._client = new InferenceClient();
-            //this.MessageQueue = new SnackbarMessageQueue(new TimeSpan(0, 0, 3));
-            //this.Outputs = new ObservableCollection<OutputCardViewModel>();
-            //BindingOperations.EnableCollectionSynchronization(this.Outputs, _outputsLock);
+            this._client = new InferenceClient();
+            this.MessageQueue = new SnackbarMessageQueue(new TimeSpan(0, 0, 3));
+            this.Outputs = new ObservableCollection<OutputCardViewModel>();
+            BindingOperations.EnableCollectionSynchronization(this.Outputs, _outputsLock);
 
             this.Inputs = new ObservableCollection<BaseInputViewModel>()
             {
-                new TextInputViewModel("Prompt:", "prompt"),
-                new NumberSliderInputViewModel("Denoising Strength:", "denoising", 0, 1, 0.7, 0.01),
-                new NumberSliderInputViewModel("CFG Scale:", "cfg_scale", 0, 30, 10, 1),
-                new IntegerInputViewModel("Seed:", "seed", -1),
-                new DropdownViewModel("Variations:", "batch_size", new List<KeyValuePair<string, object>>()
-                {
-                    new KeyValuePair<string, object>("1", 1),
-                    new KeyValuePair<string, object>("4", 4),
-                    new KeyValuePair<string, object>("9", 9),
-                    new KeyValuePair<string, object>("16", 16),
-                    new KeyValuePair<string, object>("25", 25)
-                }, 0),
-                new DropdownViewModel("Output X:", "width", new List<KeyValuePair<string, object>>()
-                {
-                    new KeyValuePair<string, object>("64", 64),
-                    new KeyValuePair<string, object>("128", 128),
-                    new KeyValuePair<string, object>("256", 256),
-                    new KeyValuePair<string, object>("512", 512),
-                    new KeyValuePair<string, object>("1024", 1024),
-                    new KeyValuePair<string, object>("2048", 2048),
-                    new KeyValuePair<string, object>("4096", 4096)
-                }, 3),
-                new DropdownViewModel("Output Y:", "height", new List<KeyValuePair<string, object>>()
-                {
-                    new KeyValuePair<string, object>("64", 64),
-                    new KeyValuePair<string, object>("128", 128),
-                    new KeyValuePair<string, object>("256", 256),
-                    new KeyValuePair<string, object>("512", 512),
-                    new KeyValuePair<string, object>("1024", 1024),
-                    new KeyValuePair<string, object>("2048", 2048),
-                    new KeyValuePair<string, object>("4096", 4096)
-                }, 3)
+                new TextInputViewModel("Prompt:", "text"),
+                new NumberSliderInputViewModel("Iterations:", "iters", 0, 50000, 2000, 1),
+                new NumberSliderInputViewModel("Clip Size:", "clip", 128, 768, 384, 8),
+                new NumberSliderInputViewModel("Threshold:", "threshold", 0, 0, 768, 0.1),
+                new IntegerInputViewModel("Seed:", "seed", -1)
             };
 
             this.PropertyChanged += DreamHopperCoreViewModel_PropertyChanged;
@@ -166,81 +144,76 @@ namespace DreamHopper.ViewModels
             }
 
             //string inputImage = this.InputImageAsBase64();
-            string prompt = dict["prompt"] as string ?? "";
+            string prompt = dict["text"] as string ?? "";
             string user = Environment.UserName;
-            int batch_size = (int)dict["batch_size"];
-            int height = (int)dict["height"];
-            int width = (int)dict["width"];
+            int iterations = (int)dict["iters"];
+            int clip = (int)dict["clip"];
             int seed = (int)dict["seed"];
-            int cfg_scale = (int)((double)dict["cfg_scale"]);
-            double denoising = (double)dict["denoising"];
+            double threshold = (double)dict["threshold"];
 
             //Communicate the server
-            //DreamHopperDTO dto = new DreamHopperDTO(
-            //    inputImage,
-            //    prompt,
-            //    user,
-            //    batch_size,
-            //    height,
-            //    width,
-            //    seed,
-            //    cfg_scale,
-            //    denoising);
+            DreamHopperDTO dto = new DreamHopperDTO(
+                prompt,
+                user,
+                iterations,
+                clip,
+                threshold,
+                seed);
 
-            //try
-            //{
-            //    _receipt = await this._client.SubmitRequest(dto);
-            //}
-            //catch (Exception exe)
-            //{
-            //    this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exe.Message));
-            //    this.Processing = false;
-            //}
+            try
+            {
+                _receipt = await this._client.SubmitRequest(dto);
+            }
+            catch (Exception exe)
+            {
+                this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exe.Message));
+                this.Processing = false;
+            }
 
-            //if (_receipt != null)
-            //{
-            //    Task.Run(async () =>
-            //    {
-            //        this.Processing = true;
-            //        this.OutputsExpanded = true;
-            //        bool isDone = false;
-            //        DiffusionDTO response = new DiffusionDTO();
+            if (_receipt != null)
+            {
+                Task.Run(async () =>
+                {
+                    this.Processing = true;
+                    this.OutputsExpanded = true;
+                    bool isDone = false;
+                    DiffusionDTO response = new DiffusionDTO();
 
-            //        int errorCounter = 0;
+                    int errorCounter = 0;
 
-            //        while (!isDone)
-            //        {
-            //            try
-            //            {
-            //                response = await this._client.CheckRequestStatus(this._receipt);
-            //                isDone = response.Done;
-            //                Thread.Sleep(this._client.CheckFrequency);
-            //            }
-            //            catch (Exception e)
-            //            {
-            //                this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(e.Message));
-            //                errorCounter += 1;
-            //                if (errorCounter > 10) isDone = true;
-            //            }
-            //        }
-            //        this.Processing = false;
+                    while (!isDone)
+                    {
+                        try
+                        {
+                            response = await this._client.CheckRequestStatus(this._receipt);
+                            isDone = response.Done;
+                            Thread.Sleep(this._client.CheckFrequency);
+                        }
+                        catch (Exception e)
+                        {
+                            this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(e.Message));
+                            errorCounter += 1;
+                            if (errorCounter > 10) isDone = true;
+                        }
+                    }
+                    this.Processing = false;
 
-            //        lock (_outputsLock)
-            //        {
-            //            foreach (string img in response.OutputImages)
-            //            {
-            //                try
-            //                {
-            //                    this.Outputs.Add(new OutputCardViewModel(this.OutputImageAsBitmap(img)));
-            //                }
-            //                catch (Exception exc)
-            //                {
-            //                    this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exc.Message));
-            //                }
-            //            }
-            //        }
-            //    });
-            //}
+                    lock (_outputsLock)
+                    {
+                        foreach (string img in response.OutputImages)
+                        {
+                            try
+                            {
+                                this.Outputs.Add(new OutputCardViewModel(this.OutputImageAsBitmap(img)));
+                            }
+                            catch (Exception exc)
+                            {
+                                this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exc.Message));
+                            }
+                        }
+                    }
+                });
+            }
 
 
         }
