@@ -32,3 +32,8 @@ C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper.ViewModels\bin\Debu
 C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper.ViewModels\obj\Debug\DreamHopper.ViewModels.csproj.Fody.CopyLocal.cache
 C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper.ViewModels\obj\Debug\DreamHopper.ViewModels.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper.ViewModels\obj\Debug\DreamHopper.ViewModels.csproj.CopyComplete
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\DreamHopper.IO.dll
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\DreamHopper.WebClient.dll
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\DreamHopper.IO.pdb
+C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.ViewModels\bin\Debug\DreamHopper.WebClient.pdb

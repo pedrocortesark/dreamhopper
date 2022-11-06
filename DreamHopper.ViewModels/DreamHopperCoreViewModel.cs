@@ -171,50 +171,50 @@ namespace DreamHopper.ViewModels
                 this.Processing = false;
             }
 
-            if (_receipt != null)
-            {
-                Task.Run(async () =>
-                {
-                    this.Processing = true;
-                    this.OutputsExpanded = true;
-                    bool isDone = false;
-                    DreamHopperDTO response = new DreamHopperDTO();
+            //if (_receipt != null)
+            //{
+            //    Task.Run(async () =>
+            //    {
+            //        this.Processing = true;
+            //        this.OutputsExpanded = true;
+            //        bool isDone = false;
+            //        DreamHopperDTO response = new DreamHopperDTO();
 
-                    int errorCounter = 0;
+            //        int errorCounter = 0;
 
-                    while (!isDone)
-                    {
-                        try
-                        {
-                            response = await this._client.CheckRequestStatus(this._receipt);
-                            isDone = response.Done;
-                            Thread.Sleep(this._client.CheckFrequency);
-                        }
-                        catch (Exception e)
-                        {
-                            this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(e.Message));
-                            errorCounter += 1;
-                            if (errorCounter > 10) isDone = true;
-                        }
-                    }
-                    this.Processing = false;
+            //        while (!isDone)
+            //        {
+            //            try
+            //            {
+            //                response = await this._client.CheckRequestStatus(this._receipt);
+            //                isDone = response.Done;
+            //                Thread.Sleep(this._client.CheckFrequency);
+            //            }
+            //            catch (Exception e)
+            //            {
+            //                this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(e.Message));
+            //                errorCounter += 1;
+            //                if (errorCounter > 10) isDone = true;
+            //            }
+            //        }
+            //        this.Processing = false;
 
-                    lock (_outputsLock)
-                    {
-                        foreach (string img in response.OutputImages)
-                        {
-                            try
-                            {
-                                this.Outputs.Add(new OutputCardViewModel(this.OutputImageAsBitmap(img)));
-                            }
-                            catch (Exception exc)
-                            {
-                                this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exc.Message));
-                            }
-                        }
-                    }
-                });
-            }
+            //        lock (_outputsLock)
+            //        {
+            //            foreach (string img in response.OutputImages)
+            //            {
+            //                try
+            //                {
+            //                    this.Outputs.Add(new OutputCardViewModel(this.OutputImageAsBitmap(img)));
+            //                }
+            //                catch (Exception exc)
+            //                {
+            //                    this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exc.Message));
+            //                }
+            //            }
+            //        }
+            //    });
+            //}
 
 
         }

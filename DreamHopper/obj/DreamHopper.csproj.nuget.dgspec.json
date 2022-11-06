@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\DreamHopper.csproj": {}
+    "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj": {}
   },
   "projects": {
-    "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj": {
+    "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.IO\\DreamHopper.IO.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj",
-        "projectName": "DreamHopper.MVVM",
-        "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj",
+        "projectUniqueName": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.IO\\DreamHopper.IO.csproj",
+        "projectName": "DreamHopper.IO",
+        "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.IO\\DreamHopper.IO.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -19,19 +19,34 @@
         "net48": {}
       }
     },
-    "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.UI\\DreamHopper.UI.csproj": {
+    "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.UI\\DreamHopper.UI.csproj",
+        "projectUniqueName": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj",
+        "projectName": "DreamHopper.MVVM",
+        "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj",
         "projectName": "DreamHopper.UI",
-        "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.UI\\DreamHopper.UI.csproj",
+        "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {
-              "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj": {
-                "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj"
+              "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj": {
+                "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj"
               },
-              "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj": {
-                "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj"
+              "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj"
               }
             }
           }
@@ -41,16 +56,22 @@
         "net48": {}
       }
     },
-    "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj": {
+    "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj",
         "projectName": "DreamHopper.ViewModels",
-        "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj",
+        "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.ViewModels\\DreamHopper.ViewModels.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {
-              "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj": {
-                "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj"
+              "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.IO\\DreamHopper.IO.csproj": {
+                "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.IO\\DreamHopper.IO.csproj"
+              },
+              "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj": {
+                "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj"
+              },
+              "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj": {
+                "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj"
               }
             }
           }
@@ -60,18 +81,44 @@
         "net48": {}
       }
     },
-    "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\DreamHopper.csproj": {
+    "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj",
+        "projectName": "DreamHopper.WebClient",
+        "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.IO\\DreamHopper.IO.csproj": {
+                "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.IO\\DreamHopper.IO.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\DreamHopper.csproj",
+        "projectUniqueName": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
         "projectName": "DreamHopper",
-        "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\DreamHopper.csproj",
-        "packagesPath": "C:\\Users\\spigach\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\obj\\",
+        "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
+        "packagesPath": "C:\\Users\\pedro.cortes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\spigach\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\pedro.cortes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net48"
@@ -84,8 +131,8 @@
           "net48": {
             "targetAlias": "net48",
             "projectReferences": {
-              "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.UI\\DreamHopper.UI.csproj": {
-                "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.UI\\DreamHopper.UI.csproj"
+              "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj": {
+                "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj"
               }
             }
           }
@@ -114,7 +161,7 @@
               "version": "[7.13.21348.13001, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

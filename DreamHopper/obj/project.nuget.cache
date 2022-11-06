@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "xUVJOOTZb0SCC56cZnCIAY3wU89bjweLQpk+P2WkQJe9aWIMXYVck0+GYzWOTAmoZKa+IrWwd4glG8/xTMdP9A==",
+  "dgSpecHash": "kWnzoETt6idr2w6f6PDn0Kxn2U82SlxMZf7Ck3sR+qr6jW4OkqFQakg19Zy+zuyhKuMjqeRLn76f7hfOvZvfHQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\DreamHopper.csproj",
+  "projectFilePath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\spigach\\.nuget\\packages\\materialdesigncolors\\2.0.9\\materialdesigncolors.2.0.9.nupkg.sha512",
-    "C:\\Users\\spigach\\.nuget\\packages\\materialdesignthemes\\4.6.1\\materialdesignthemes.4.6.1.nupkg.sha512",
-    "C:\\Users\\spigach\\.nuget\\packages\\rhinocommon\\7.13.21348.13001\\rhinocommon.7.13.21348.13001.nupkg.sha512",
-    "C:\\Users\\spigach\\.nuget\\packages\\rhinowindows\\7.13.21348.13001\\rhinowindows.7.13.21348.13001.nupkg.sha512"
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\materialdesigncolors\\2.0.9\\materialdesigncolors.2.0.9.nupkg.sha512",
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\materialdesignthemes\\4.6.1\\materialdesignthemes.4.6.1.nupkg.sha512",
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\rhinocommon\\7.13.21348.13001\\rhinocommon.7.13.21348.13001.nupkg.sha512",
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\rhinowindows\\7.13.21348.13001\\rhinowindows.7.13.21348.13001.nupkg.sha512"
   ],
   "logs": []
 }
