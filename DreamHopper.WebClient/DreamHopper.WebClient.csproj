@@ -52,5 +52,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DreamHopper.IO\DreamHopper.IO.csproj">
+      <Project>{9A7841EB-87D7-44C3-9547-2147EE890A7A}</Project>
+      <Name>DreamHopper.IO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Forms;
@@ -177,7 +178,7 @@ namespace DreamHopper.ViewModels
                     this.Processing = true;
                     this.OutputsExpanded = true;
                     bool isDone = false;
-                    DiffusionDTO response = new DiffusionDTO();
+                    DreamHopperDTO response = new DreamHopperDTO();
 
                     int errorCounter = 0;
 

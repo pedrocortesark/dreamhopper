@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DreamHopperCoreViewModel.cs" />
-    <Compile Include="DreamHopperDTO.cs" />
     <Compile Include="EventArgs\CaptureImageEventArgs.cs" />
     <Compile Include="Helpers\SnackBarContentCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,9 +73,17 @@
     <Compile Include="ViewModels\TextInputViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DreamHopper.IO\DreamHopper.IO.csproj">
+      <Project>{9A7841EB-87D7-44C3-9547-2147EE890A7A}</Project>
+      <Name>DreamHopper.IO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DreamHopper.MVVM\DreamHopper.MVVM.csproj">
       <Project>{8C42B10A-2ED7-41C3-8456-B2894E70276C}</Project>
       <Name>DreamHopper.MVVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DreamHopper.WebClient\DreamHopper.WebClient.csproj">
+      <Project>{AD075BE5-1CF1-4584-A24D-9E0C80A00854}</Project>
+      <Name>DreamHopper.WebClient</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

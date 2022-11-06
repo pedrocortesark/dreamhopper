@@ -36,6 +36,12 @@ namespace DreamHopper.IO
         [JsonProperty("seed")]
         public int Seed { get; set; }
 
+        [JsonProperty("done")]
+        public bool Done { get; set; }
+
+        [JsonProperty("mesh")]
+        public DreamHopperMesh Mesh { get; set; }
+
         public DreamHopperDTO(string prompt, string user, int iterations, int clip, double threshold, int seed)
         {
             Prompt = prompt;
@@ -47,6 +53,12 @@ namespace DreamHopper.IO
             RenderHeight = clip;
             Threshold = threshold;
             Seed = seed;
+            Done = false;
+        }
+
+        public DreamHopperDTO()
+        {
+
         }
     }
 }
