@@ -5,10 +5,14 @@
       "MaterialDesignColors/2.0.9": {
         "type": "package",
         "compile": {
-          "lib/net462/MaterialDesignColors.dll": {}
+          "lib/net462/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/net462/MaterialDesignColors.dll": {}
+          "lib/net462/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "MaterialDesignThemes/4.6.1": {
@@ -17,10 +21,14 @@
           "MaterialDesignColors": "[2.0.9, 3.0.0)"
         },
         "compile": {
-          "lib/net462/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net462/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net462/MaterialDesignThemes.Wpf.dll": {}
+          "lib/net462/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "build/MaterialDesignThemes.targets": {}
@@ -29,12 +37,18 @@
       "RhinoCommon/7.13.21348.13001": {
         "type": "package",
         "compile": {
-          "lib/net48/Eto.dll": {},
+          "lib/net48/Eto.dll": {
+            "related": ".xml"
+          },
           "lib/net48/Rhino.UI.dll": {},
-          "lib/net48/RhinoCommon.dll": {}
+          "lib/net48/RhinoCommon.dll": {
+            "related": ".XML"
+          }
         },
         "runtime": {
-          "lib/net48/_._": {}
+          "lib/net48/_._": {
+            "related": ".xml"
+          }
         },
         "build": {
           "build/RhinoCommon.targets": {}
@@ -69,6 +83,7 @@
       "DreamHopper.UI/1.0.0": {
         "type": "project",
         "dependencies": {
+          "DreamHopper.MVVM": "1.0.0",
           "DreamHopper.ViewModels": "1.0.0"
         },
         "compile": {
@@ -212,30 +227,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pedro.cortes\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\spigach\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
+      "projectUniqueName": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\DreamHopper.csproj",
       "projectName": "DreamHopper",
-      "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
-      "packagesPath": "C:\\Users\\pedro.cortes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\obj\\",
+      "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\DreamHopper.csproj",
+      "packagesPath": "C:\\Users\\spigach\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\pedro.cortes\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\spigach\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net48"
@@ -248,8 +253,8 @@
         "net48": {
           "targetAlias": "net48",
           "projectReferences": {
-            "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj": {
-              "projectPath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper.UI\\DreamHopper.UI.csproj"
+            "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.UI\\DreamHopper.UI.csproj": {
+              "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.UI\\DreamHopper.UI.csproj"
             }
           }
         }
@@ -278,7 +283,7 @@
             "version": "[7.13.21348.13001, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
