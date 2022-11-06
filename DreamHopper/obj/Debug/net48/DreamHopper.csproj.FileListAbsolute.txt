@@ -26,3 +26,13 @@ C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\Dre
 C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\obj\Debug\net48\DreamHopper.csproj.CopyComplete
 C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\obj\Debug\net48\DreamHopper.rhp
 C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\obj\Debug\net48\DreamHopper.pdb
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\DreamHopper.IO.dll
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\DreamHopper.WebClient.dll
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\Newtonsoft.Json.dll
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\DreamHopper.IO.pdb
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\DreamHopper.WebClient.pdb
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\Newtonsoft.Json.xml
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\Web.config
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\App.config
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\DreamHopper.rhp.config
+C:\Users\spigach\Documents\GitHub\dreamhopper-ui\DreamHopper\bin\Debug\net48\DreamHopper.WebClient.dll.config

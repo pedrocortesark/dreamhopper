@@ -38,7 +38,7 @@ namespace DreamHopper.ViewModels
         public bool HasReferenceImage { get { return ReferenceImage != null; } set { } }
 
         public ObservableCollection<BaseInputViewModel> Inputs { get; set; }
-        public ObservableCollection<OutputCardViewModel> Outputs { get; set; }
+        public DreamHopperMesh Mesh { get; set; }
 
         private object _outputsLock = new object();
 
@@ -49,18 +49,15 @@ namespace DreamHopper.ViewModels
             //this.CaptureImageCommand = new RelayCommand(this.CaptureImage);
             //this.OpenImageCommand = new RelayCommand(this.OpenImage);
             this.RunInferenceCommand = new RelayCommand(async () => await this.RunInference());
-            this.SaveImagesCommand = new RelayCommand(this.SaveImages);
             this._client = new InferenceClient();
             this.MessageQueue = new SnackbarMessageQueue(new TimeSpan(0, 0, 3));
-            this.Outputs = new ObservableCollection<OutputCardViewModel>();
-            BindingOperations.EnableCollectionSynchronization(this.Outputs, _outputsLock);
 
             this.Inputs = new ObservableCollection<BaseInputViewModel>()
             {
                 new TextInputViewModel("Prompt:", "text"),
                 new NumberSliderInputViewModel("Iterations:", "iters", 0, 50000, 2000, 1),
-                new NumberSliderInputViewModel("Clip Size:", "clip", 128, 768, 384, 8),
-                new NumberSliderInputViewModel("Threshold:", "threshold", 0, 0, 768, 0.1),
+                new NumberSliderInputViewModel("Clip Size:", "clip", 128, 768, 160),
+                new NumberSliderInputViewModel("Threshold:", "threshold", 0, 50, 10, 0.1),
                 new IntegerInputViewModel("Seed:", "seed", -1)
             };
 
@@ -105,37 +102,8 @@ namespace DreamHopper.ViewModels
             this.OnImageCaptureTriggered(args);
         }
 
-        public void SaveImages()
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                Title = "Save Generated Images",
-
-                DefaultExt = "png",
-                Filter = "PNG Image (*.png)|*.png",
-                FilterIndex = 2,
-                RestoreDirectory = true
-            };
-
-            List<OutputCardViewModel> selectedCards = this.Outputs.Where(s => s.IsSelected).ToList();
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                for (int i = 1; i <= selectedCards.Count; i++)
-                {
-                    string name = saveFileDialog.FileName;
-                    name = name.Replace(".png", $"_{i.ToString("0000")}.png");
-
-                    var card = selectedCards[i - 1];
-                    card.Image.Save(name, ImageFormat.Png);
-                }
-            }
-        }
-
         public async Task RunInference()
         {
-            this.Outputs.Clear();
             Dictionary<string, object> dict = new Dictionary<string, object>();
 
             foreach (BaseInputViewModel vm in this.Inputs)
@@ -147,8 +115,8 @@ namespace DreamHopper.ViewModels
             //string inputImage = this.InputImageAsBase64();
             string prompt = dict["text"] as string ?? "";
             string user = Environment.UserName;
-            int iterations = (int)dict["iters"];
-            int clip = (int)dict["clip"];
+            int iterations = (int)((double)dict["iters"]);
+            int clip = (int)((double)dict["clip"]);
             int seed = (int)dict["seed"];
             double threshold = (double)dict["threshold"];
 
@@ -199,48 +167,22 @@ namespace DreamHopper.ViewModels
                     }
                     this.Processing = false;
 
-                    lock (_outputsLock)
+                    try
                     {
-                        foreach (string img in response.OutputImages)
-                        {
-                            try
-                            {
-                                this.Outputs.Add(new OutputCardViewModel(this.OutputImageAsBitmap(img)));
-                            }
-                            catch (Exception exc)
-                            {
-                                this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exc.Message));
-                            }
-                        }
+                        var mesh = response.Mesh;
+                        // 
                     }
+                    catch (Exception exc)
+                    {
+                        this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exc.Message));
+                    }
+
+
                 });
             }
 
 
         }
-
-        public string InputImageAsBase64()
-        {
-            if (this.ReferenceImage != null)
-            {
-                MemoryStream ms = new MemoryStream();
-                this.ReferenceImage.Save(ms, ImageFormat.Png);
-                byte[] byteImage = ms.ToArray();
-                return Convert.ToBase64String(byteImage); // Get Base64
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        public Bitmap OutputImageAsBitmap(string base64)
-        {
-            Byte[] bitmapData = Convert.FromBase64String(base64);
-            System.IO.MemoryStream streamBitmap = new System.IO.MemoryStream(bitmapData);
-            return new Bitmap((Bitmap)Image.FromStream(streamBitmap));
-        }
-
 
         public EventHandler ImageCaptureTriggered;
         public void OnImageCaptureTriggered(CaptureImageEventArgs e)

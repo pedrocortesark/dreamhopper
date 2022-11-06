@@ -71,6 +71,15 @@
           "build/RhinoWindows.targets": {}
         }
       },
+      "DreamHopper.IO/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DreamHopper.IO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DreamHopper.IO.dll": {}
+        }
+      },
       "DreamHopper.MVVM/1.0.0": {
         "type": "project",
         "compile": {
@@ -96,13 +105,27 @@
       "DreamHopper.ViewModels/1.0.0": {
         "type": "project",
         "dependencies": {
-          "DreamHopper.MVVM": "1.0.0"
+          "DreamHopper.IO": "1.0.0",
+          "DreamHopper.MVVM": "1.0.0",
+          "DreamHopper.WebClient": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DreamHopper.ViewModels.dll": {}
         },
         "runtime": {
           "bin/placeholder/DreamHopper.ViewModels.dll": {}
+        }
+      },
+      "DreamHopper.WebClient/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DreamHopper.IO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DreamHopper.WebClient.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DreamHopper.WebClient.dll": {}
         }
       }
     }
@@ -202,6 +225,11 @@
         "rhinowindows.nuspec"
       ]
     },
+    "DreamHopper.IO/1.0.0": {
+      "type": "project",
+      "path": "../DreamHopper.IO/DreamHopper.IO.csproj",
+      "msbuildProject": "../DreamHopper.IO/DreamHopper.IO.csproj"
+    },
     "DreamHopper.MVVM/1.0.0": {
       "type": "project",
       "path": "../DreamHopper.MVVM/DreamHopper.MVVM.csproj",
@@ -216,6 +244,11 @@
       "type": "project",
       "path": "../DreamHopper.ViewModels/DreamHopper.ViewModels.csproj",
       "msbuildProject": "../DreamHopper.ViewModels/DreamHopper.ViewModels.csproj"
+    },
+    "DreamHopper.WebClient/1.0.0": {
+      "type": "project",
+      "path": "../DreamHopper.WebClient/DreamHopper.WebClient.csproj",
+      "msbuildProject": "../DreamHopper.WebClient/DreamHopper.WebClient.csproj"
     }
   },
   "projectFileDependencyGroups": {

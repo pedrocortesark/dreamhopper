@@ -4,6 +4,21 @@
     "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper\\DreamHopper.csproj": {}
   },
   "projects": {
+    "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.IO\\DreamHopper.IO.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.IO\\DreamHopper.IO.csproj",
+        "projectName": "DreamHopper.IO",
+        "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.IO\\DreamHopper.IO.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
     "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj": {
       "restore": {
         "projectUniqueName": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj",
@@ -49,8 +64,33 @@
         "frameworks": {
           "net48": {
             "projectReferences": {
+              "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.IO\\DreamHopper.IO.csproj": {
+                "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.IO\\DreamHopper.IO.csproj"
+              },
               "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj": {
                 "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.MVVM\\DreamHopper.MVVM.csproj"
+              },
+              "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj": {
+                "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj",
+        "projectName": "DreamHopper.WebClient",
+        "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.WebClient\\DreamHopper.WebClient.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.IO\\DreamHopper.IO.csproj": {
+                "projectPath": "C:\\Users\\spigach\\Documents\\GitHub\\dreamhopper-ui\\DreamHopper.IO\\DreamHopper.IO.csproj"
               }
             }
           }
