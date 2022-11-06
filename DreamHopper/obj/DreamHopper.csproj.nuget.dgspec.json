@@ -104,6 +104,10 @@
         "net48": {
           "targetAlias": "net48",
           "dependencies": {
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.6.1, )"
+            },
             "RhinoCommon": {
               "include": "Compile, Build",
               "target": "Package",

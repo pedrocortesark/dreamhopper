@@ -14,6 +14,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
     <PackageReference Include="RhinoCommon" Version="7.13.21348.13001" IncludeAssets="compile;build" />
     <PackageReference Include="RhinoWindows" Version="7.13.21348.13001" />
   </ItemGroup>

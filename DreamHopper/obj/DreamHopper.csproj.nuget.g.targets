@@ -6,5 +6,6 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)rhinocommon\7.13.21348.13001\build\RhinoCommon.targets" Condition="Exists('$(NuGetPackageRoot)rhinocommon\7.13.21348.13001\build\RhinoCommon.targets')" />
     <Import Project="$(NuGetPackageRoot)rhinowindows\7.13.21348.13001\build\RhinoWindows.targets" Condition="Exists('$(NuGetPackageRoot)rhinowindows\7.13.21348.13001\build\RhinoWindows.targets')" />
+    <Import Project="$(NuGetPackageRoot)materialdesignthemes\4.6.1\build\MaterialDesignThemes.targets" Condition="Exists('$(NuGetPackageRoot)materialdesignthemes\4.6.1\build\MaterialDesignThemes.targets')" />
   </ImportGroup>
 </Project>

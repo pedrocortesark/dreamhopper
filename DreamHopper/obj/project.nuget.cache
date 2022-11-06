@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hV90M6c8gtQjNiBVWooZIgsc3DH3qF2zpgpQgW6R0tyvnxqolnW57Pe7UaZC24T4BQ6ECirPMWedlRIazGurvA==",
+  "dgSpecHash": "PFwhZ08hZjliFRX8xoWsE7FWIJDpYtTt663wxSIKN7BEK3NHCWAl7m7voq36oh5xgKwt7df8WuvqV7NTWzkvsQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\pedro.cortes\\Desktop\\AECTech\\DreamHopper\\DreamHopper\\DreamHopper.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\materialdesigncolors\\2.0.9\\materialdesigncolors.2.0.9.nupkg.sha512",
+    "C:\\Users\\pedro.cortes\\.nuget\\packages\\materialdesignthemes\\4.6.1\\materialdesignthemes.4.6.1.nupkg.sha512",
     "C:\\Users\\pedro.cortes\\.nuget\\packages\\rhinocommon\\7.13.21348.13001\\rhinocommon.7.13.21348.13001.nupkg.sha512",
     "C:\\Users\\pedro.cortes\\.nuget\\packages\\rhinowindows\\7.13.21348.13001\\rhinowindows.7.13.21348.13001.nupkg.sha512"
   ],

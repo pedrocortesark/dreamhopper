@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="DreamHopper.UI.Controls.Inputs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DreamHopper.UI.Controls"
+             xmlns:vm="clr-namespace:DreamHopper.ViewModels.ViewModels;assembly=DreamHopper.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Control.Resources>
+        <ResourceDictionary Source="pack://application:,,,/DreamHopper.UI;component/ResourceDictionary.xaml"/>
+    </Control.Resources>
+    
+    <Grid Margin="10">
+        
+        <StackPanel>
+            
+            <!--Image load-->
+            <Border 
+                Height="128" 
+                Width="128" 
+                BorderBrush="{StaticResource PrimaryHueDarkBrush}"
+                BorderThickness="1">
+                <!--<Grid>
+                    <Image Source="{Binding ReferenceImage, Converter={local:BitmapToImageSourceConverter}}"/>
+                    <Label 
+                        Content="No input image" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Foreground="{StaticResource PrimaryHueDarkBrush}"
+                        Visibility="{Binding HasReferenceImage, Converter={local:InverseBooleanToVisiblityConverter}}"/>
+                </Grid>-->
+            </Border>
+            
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!--Capture button-->
+                <Button 
+                    Margin="0,10" 
+                    Padding="0"
+                    Grid.Column="0"
+                    Command="{Binding CaptureImageCommand}" 
+                    Foreground="{StaticResource PrimaryHueLightBrush}"
+                    Background="{StaticResource PrimaryHueDarkBrush}"
+                    BorderBrush="{StaticResource PrimaryHueDarkBrush}">
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <materialDesign:PackIcon 
+                                Height="20" 
+                                Width="20" 
+                                Kind="Camera" 
+                                Foreground="{StaticResource PrimaryHueLightForegroundBrush}"
+                                VerticalAlignment="Center"
+                                Margin="0,0,10,0"/>
+                        <Label Content="Capture" FontSize="12" VerticalAlignment="Center" Foreground="{StaticResource PrimaryHueLightForegroundBrush}"/>
+                    </StackPanel>
+                </Button>
+                <!--Open button-->
+                <Button 
+                    Margin="0,10" 
+                    Padding="0"
+                    Grid.Column="2"
+                    Command="{Binding OpenImageCommand}" 
+                    Foreground="{StaticResource PrimaryHueLightBrush}"
+                    Background="{StaticResource PrimaryHueDarkBrush}"
+                    BorderBrush="{StaticResource PrimaryHueDarkBrush}">
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <materialDesign:PackIcon 
+                                Height="20" 
+                                Width="20" 
+                                Kind="File" 
+                                Foreground="{StaticResource PrimaryHueLightForegroundBrush}"
+                                VerticalAlignment="Center"
+                                Margin="0,0,10,0"/>
+                        <Label Content="Open" FontSize="12" VerticalAlignment="Center" Foreground="{StaticResource PrimaryHueLightForegroundBrush}"/>
+                    </StackPanel>
+                </Button>
+                
+            </Grid>
+
+            <!--Settings-->
+            <Expander>
+                <Expander.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon 
+                            Height="25" 
+                            Width="25" 
+                            Kind="Gear" 
+                            Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
+                            VerticalAlignment="Center"
+                            Margin="0,0,10,0"/>
+                        <Label Content="Settings" FontSize="16" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Expander.Header>
+
+                <ItemsControl ItemsSource="{Binding Inputs}">
+                    <ItemsControl.Resources>
+                        <DataTemplate DataType="{x:Type vm:NumberSliderInputViewModel}">
+                            <local:SliderInput/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type vm:TextInputViewModel}">
+                            <local:TextInput/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type vm:IntegerInputViewModel}">
+                            <local:IntegerTextInput/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type vm:DropdownViewModel}">
+                            <local:DropdownInput/>
+                        </DataTemplate>
+                    </ItemsControl.Resources>
+                </ItemsControl>
+
+            </Expander>
+            
+            <!--Run button-->
+            <Button 
+                Margin="0,10" 
+                Padding="0"
+                Command="{Binding RunInferenceCommand}" 
+                Foreground="{StaticResource PrimaryHueLightBrush}"
+                Background="{StaticResource PrimaryHueDarkBrush}"
+                BorderBrush="{StaticResource PrimaryHueDarkBrush}">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon 
+                            Height="20" 
+                            Width="20" 
+                            Kind="RocketLaunch" 
+                            Foreground="{StaticResource PrimaryHueLightForegroundBrush}"
+                            VerticalAlignment="Center"
+                            Margin="0,0,10,0"/>
+                    <Label Content="Run" FontSize="12" VerticalAlignment="Center" Foreground="{StaticResource PrimaryHueLightForegroundBrush}"/>
+                </StackPanel>
+            </Button>
+            
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

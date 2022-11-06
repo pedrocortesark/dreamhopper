@@ -6,4 +6,3 @@ C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.MVVM\obj\Debug\Dre
 C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.MVVM\obj\Debug\DreamHopper.MVVM.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.MVVM\obj\Debug\DreamHopper.MVVM.dll
 C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.MVVM\obj\Debug\DreamHopper.MVVM.pdb
-C:\Users\pedro.cortes\Desktop\AECTech\DreamHopper\DreamHopper.MVVM\obj\Debug\DreamHopper.MVVM.csproj.AssemblyReference.cache

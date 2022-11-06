@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace UIM.MVVM
+namespace DreamHopper.MVVM
 {
     public class RelayCommand : ICommand
     {
-        private Action _action;
+        private Action mAction;
 
         public event EventHandler CanExecuteChanged = (sender, e) => { };
 
         public RelayCommand(Action action)
         {
-            this._action = action;
+            this.mAction = action;
         }
 
         public bool CanExecute(object parameter)
@@ -25,7 +21,7 @@ namespace UIM.MVVM
 
         public void Execute(object parameter)
         {
-            this._action();
+            mAction();
         }
     }
 }

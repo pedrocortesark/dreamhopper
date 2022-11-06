@@ -1,31 +1,15 @@
-﻿using DreamHopper.ViewModels.ViewModels;
+﻿using DreamHopper.ViewModels;
 using Rhino;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DreamHopper.UI.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainView : UserControl
     {
         public MainView(RhinoDoc doc)
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel(doc.Name);
+            this.DataContext = new DreamHopperCoreViewModel(doc.Name);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DreamHopper
         public DreamHopperCommand()
         {
             Instance = this;
-            Panels.RegisterPanel(DreamHopperPlugin.Instance, typeof(DreamHopperHost), "DreamHopper", Properties.Resources.TestIcon);
+            Panels.RegisterPanel(DreamHopperPlugin.Instance, typeof(DreamHopperHost), "DreamHopper", Properties.Resources.DreamHopperIcon);
 
         }
 
