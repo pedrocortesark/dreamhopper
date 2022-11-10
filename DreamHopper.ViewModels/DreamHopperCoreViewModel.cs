@@ -26,10 +26,15 @@ namespace DreamHopper.ViewModels
         public bool OutputsExpanded { get; set; }
         public bool Processing { get; set; }
 
-        public ICommand CaptureImageCommand { get; set; }
-        public ICommand OpenImageCommand { get; set; }
+        public ICommand BakeCommand { get; set; }
         public ICommand RunInferenceCommand { get; set; }
-        public ICommand SaveImagesCommand { get; set; }
+
+        public bool CanBake
+        {
+            get { return this.Mesh != null && this.Mesh.IsValid && !this.Processing; }
+            set { }
+        }
+
 
         private InferenceClient _client;
         private SubmissionReceipt _receipt;
@@ -49,8 +54,10 @@ namespace DreamHopper.ViewModels
             //this.CaptureImageCommand = new RelayCommand(this.CaptureImage);
             //this.OpenImageCommand = new RelayCommand(this.OpenImage);
             this.RunInferenceCommand = new RelayCommand(async () => await this.RunInference());
+            this.BakeCommand = new RelayCommand(this.Bake);
             this._client = new InferenceClient();
             this.MessageQueue = new SnackbarMessageQueue(new TimeSpan(0, 0, 3));
+            this.Processing = false;
 
             this.Inputs = new ObservableCollection<BaseInputViewModel>()
             {
@@ -64,35 +71,12 @@ namespace DreamHopper.ViewModels
             this.PropertyChanged += DreamHopperCoreViewModel_PropertyChanged;
         }
 
-        //private void OpenImage()
-        //{
-        //    using (OpenFileDialog openFileDialog = new OpenFileDialog())
-        //    {
-        //        openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-        //        openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-        //        openFileDialog.FilterIndex = 2;
-        //        openFileDialog.RestoreDirectory = true;
-
-        //        if (openFileDialog.ShowDialog() == DialogResult.OK)
-        //        {
-        //            try
-        //            {
-        //                ReferenceImage = new Bitmap(openFileDialog.FileName);
-        //            }
-        //            catch (Exception exc)
-        //            {
-        //                this.MessageQueue.Enqueue(SnackBarContentCreator.CreateErrorMessage(exc.Message));
-        //            }
-        //        }
-        //    }
-        //}
-
 
         private void DreamHopperCoreViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(this.ReferenceImage))
+            if (e.PropertyName == nameof(this.Mesh) || e.PropertyName == nameof(this.Processing))
             {
-                this.RaisePropertyChanged(nameof(this.HasReferenceImage));
+                this.RaisePropertyChanged(nameof(this.CanBake));
             }
         }
 
@@ -169,7 +153,7 @@ namespace DreamHopper.ViewModels
 
                     try
                     {
-                        var mesh = response.Mesh;
+                        this.Mesh = response.Mesh;
                         // 
                     }
                     catch (Exception exc)
@@ -182,6 +166,13 @@ namespace DreamHopper.ViewModels
             }
 
 
+        }
+
+        public void Bake()
+        {
+            Rhino.Geometry.Mesh mesh = this.Mesh.CreateMesh();
+            Rhino.RhinoDoc.ActiveDoc.Objects.AddMesh(mesh);
+            Rhino.RhinoDoc.ActiveDoc.Views.Redraw();
         }
 
         public EventHandler ImageCaptureTriggered;
